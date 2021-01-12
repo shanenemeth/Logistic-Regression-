@@ -3,3 +3,4 @@
 * Split dataset into training and testing subsets 
 * Utilized ROCR package to determine best threshold and performance for the model
 * Created a plot of the performance using true positive rate and false positive rate for the axes to determine best threshold for the model and reduce the false positive rate 
+* Accuracy of the model was .76
