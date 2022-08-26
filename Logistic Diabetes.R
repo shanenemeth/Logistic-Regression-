@@ -12,11 +12,11 @@ testing <- subset(data, split=="FALSE")
 attach(data)
 model <- glm(Outcome~., training, family = "binomial")
 summary(model)
-pred <- predict(model, training, type = "response")
+pred <- predict(model, testing, type = "response")
 pred
 
-(table(ActualValue=training$Outcome, PredictedValue=pred>.5))
+(table(ActualValue=testing$Outcome, PredictedValue=pred>.5))
 
-ROCRPred = prediction(pred, training$Outcome)
+ROCRPred = prediction(pred, testing$Outcome)
 ROCRPref <- performance(ROCRPred,"tpr","fpr")  
 plot(ROCRPref, colorize="TRUE", print.cutoffs.at=seq(0.1, by=0.1))
